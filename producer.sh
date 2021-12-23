@@ -19,7 +19,7 @@ do
 		do
 			if ! pgrep  -f "/example/$k$i" > /dev/null 
 			then
-				echo 'RANDOM' | ndnpoke -x 2000 -w 7200000 ndn:/example/$k$i & 
+				echo 'RANDOM' | ndnpoke -x 60000 -w 7200000 ndn:/example/$k$i & 
 			fi
 		done
 	done
