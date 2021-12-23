@@ -17,15 +17,6 @@ while (True):
     #Closing file
     f.close()
 
-    #print(data)
-
-    #for i in data:
-    #    print(i['hard_ifindex'])
-    #    print(i['orig_address'])
-    #    print(i['hard_ifname'])
-    #print(" ")
-
-
     with open('bestoriginators.json', 'w') as f2:
         sys.stdout = f2
         #find how many best exist

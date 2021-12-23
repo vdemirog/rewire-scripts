@@ -2,8 +2,6 @@ import os
 import subprocess
 import time
 
-
-
 #content = subprocess.run("nc -l -p 7998", shell=True)
 content = "/temp2"
 print(content)

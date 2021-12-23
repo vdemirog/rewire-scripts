@@ -11,8 +11,6 @@ do
 	sleep 3	
 done
 
-
-#When ndnpoke satisfied,it has to restart
 while true 
 do
 	for k in $DB_SENSORS 
