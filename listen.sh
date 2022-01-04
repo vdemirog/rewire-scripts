@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#while true;
-#do
+while true;
+do
         result=$(nc -l -p 8000)
         echo $result
         firstcmd=`echo "${result}" | head -1`
@@ -9,6 +9,6 @@
         ./ndnconf.sh $firstcmd
         ./ndnconf.sh $secondcmd
 
-#done
+done
 exit 0
 
