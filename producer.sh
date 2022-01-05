@@ -5,18 +5,9 @@ content="1 2 3 4 5 6 7 8 9 10 11 12 38413 14 15 16 17 18 13 20 21 22 23 24 25 26
 
 for k in $content
 do
-	echo $RANDOM | ndnpoke -x 10000 -w 7200000 ndn:/content$k &
-    	sleep 0.1
+	while /bin/true; do
+		echo $RANDOM | ndnpoke -x 10000 -w 7200000 ndn:/content$k
+    		#sleep 0.1
+	done &
+	sleep 0.1
 done
-
-while true
-do
-	for k in $content
-	do
-		if ! pgrep  -f "/content$k " > /dev/null
-		then
-			echo $RANDOM | ndnpoke -x 10000 -w 7200000 ndn:/content$k &
-		fi
-	done
-done
-

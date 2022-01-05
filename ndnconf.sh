@@ -23,7 +23,7 @@ ndnregister()
     #first check if NDN container is running
     if [ ! -z "$NDNCheck" ]
     then
-        docker exec ndn nfdc register $content $face
+        docker exec ndn nfdc register -e 10000  $content $face
     else 
         echo "ERROR no running container found"
         exit 1
