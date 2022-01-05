@@ -113,16 +113,18 @@ content="1      40      11      18       1       5      18       1       1
       21     160     103      95       9       1       2       2     318
        5"
 
-    for k in $content 
+
+    for k in $content
     do
-        echo ndn:/content$k | nc -q 1 10.0.3.18 7998
-        result=$(nc -l -p 7999)
-        echo $result
-        if [ "$result" == "cts" ] 
-        then  
-            ./ndnconf.sh ndnpeek ndn:/content$k
-        fi
-        sleep 2	
+	    start=$(date +%s.%3N)
+	    echo ndn:/content$k | nc -q 1 10.10.10.3 7998
+	    end=$(date +%s.%3N)
+        delay=$(echo "scale=3; $end - $start" | bc)
+        echo "Controller Delay: $delay"
+	    ./ndnconf.sh ndnpeek ndn:/content$k
+        sleep 1
+
     done
 
 exit 0
+
